@@ -2,6 +2,7 @@ package app.gboardios.patches.flicklayout
 
 import app.gboardios.patches.shared.Constants.COMPATIBILITY_GBOARD
 import app.gboardios.patches.shared.ResourceIds
+import app.gboardios.patches.shared.writeBundled
 import app.gboardios.patches.signature.signatureCheckBypassPatch
 import app.morphe.patcher.patch.ResourcePatchContext
 import app.morphe.patcher.patch.resourcePatch
@@ -108,12 +109,5 @@ private fun ResourcePatchContext.addIds() {
     }
 }
 
-private fun ResourcePatchContext.writeBundled(ids: ResourceIds, bundled: String, target: String) {
-    val text = object {}.javaClass.getResourceAsStream("/gboardios/flicklayout/$bundled")
-        ?.use { it.readBytes().toString(Charsets.UTF_8) }
-        ?: error("Missing bundled resource $bundled")
-    resourceFile(target, copy = false).apply {
-        parentFile.mkdirs()
-        writeText(ids.expand(text), Charsets.UTF_8)
-    }
-}
+private fun ResourcePatchContext.writeBundled(ids: ResourceIds, bundled: String, target: String) =
+    writeBundled(ids, "flicklayout", bundled, target)
