@@ -21,7 +21,7 @@
         <mapping key_id="{{0x7f0b2305}}" view_id="@id/B03" />
         <mapping key_id="{{0x7f0b103a}}" view_id="@id/B04" />
         <mapping key_id="{{0x7f0b0892}}" view_id="@id/B05" />
-        <!-- emoji key, or the globe key when several languages are enabled -->
+        <!-- bottom left: emoji key, or the globe key when several languages are enabled -->
         <mapping key_id="{{0x7f0b246f}}" view_id="@id/A02" />
     </key_mapping>
     <key_mapping state="SHOW_LANGUAGE_SWITCH_KEY">

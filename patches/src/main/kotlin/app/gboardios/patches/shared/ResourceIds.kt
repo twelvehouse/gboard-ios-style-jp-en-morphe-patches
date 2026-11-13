@@ -16,18 +16,22 @@ class ResourceIds private constructor(private val names: Map<Long, Pair<String, 
     /** Decoded file path of a file resource such as a layout or an xml, in the default configuration. */
     fun path(id: Long): String = entry(id).let { (type, name) -> "res/$type/$name.xml" }
 
+    /** Decoded name of [id], for example to build an attribute name such as `app:<name>`. */
+    fun name(id: Long): String = entry(id).second
+
     /**
-     * Replaces placeholders of the form `{{0x7f0e0701}}` with the decoded reference of that id,
-     * so XML bundled with the patches can refer to obfuscated resources.
+     * Replaces placeholders so XML bundled with the patches can refer to obfuscated resources:
+     * `{{0x7f0e0701}}` becomes the reference `@type/name`, and `{{name:0x7f0405f3}}` the bare name.
      */
     fun expand(text: String): String = PLACEHOLDER.replace(text) { match ->
-        ref(match.groupValues[1].removePrefix("0x").toLong(16))
+        val id = match.groupValues[2].removePrefix("0x").toLong(16)
+        if (match.groupValues[1] == "name:") name(id) else ref(id)
     }
 
     private fun entry(id: Long) = names[id] ?: error("Resource 0x${id.toString(16)} is missing from public.xml")
 
     companion object {
-        private val PLACEHOLDER = Regex("""\{\{(0x[0-9a-fA-F]{8})}}""")
+        private val PLACEHOLDER = Regex("""\{\{(name:)?(0x[0-9a-fA-F]{8})}}""")
 
         fun read(context: ResourcePatchContext): ResourceIds {
             val names = HashMap<Long, Pair<String, String>>()
