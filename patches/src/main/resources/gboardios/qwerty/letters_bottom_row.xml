@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Bottom row of the letter keyboards (QWERTY, QWERTZ, AZERTY, ...). Replaces layout 0x7f0e04ef.
      Stock order: [?123] [A02] [globe] [space] [A06] [A08] [enter].
-     The globe key moves to the left edge and takes 20% of the width, which is the place and the
-     width of the globe key on the Japanese 12-key keyboards, and gets the same pill shape.
+     The row has iOS's proportions: two small keys on the left, the space key in the middle and
+     an enter key as wide as the two small keys, that is [globe] [?123] [space] [enter] at
+     1 : 1 : 4 : 2. The globe key, shown when more than one language is enabled, goes to the left
+     edge, where it is on the Japanese 12-key keyboards, and gets the same pill shape.
+     A plain LinearLayout without weightSum shares the width among the visible keys only, so the
+     row keeps the iOS proportions whether or not the globe key is shown.
      A02 / A06 / A08 (emoji, comma, period) keep following Gboard's preferences. -->
-<com.google.android.libraries.inputmethod.widgets.ExpandedChildLinearLayout android:weightSum="1000.0" app:{{name:0x7f0405f3}}="@id/key_pos_space" style="{{0x7f1501f3}}"
+<LinearLayout style="{{0x7f1501f3}}"
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.google.android.libraries.inputmethod.widgets.SoftKeyView android:id="@id/key_pos_switch_to_next_language" android:visibility="gone" android:layout_weight="200.0" app:{{name:0x7f04038f}}="true" style="{{0x7f1506e6}}" />
-    <com.google.android.libraries.inputmethod.widgets.SoftKeyView android:id="@id/key_pos_switch_to_symbol" android:layout_weight="150.0" style="{{0x7f1506e6}}" />
-    <com.google.android.libraries.inputmethod.widgets.SoftKeyView android:id="@id/A02" android:visibility="gone" android:layout_weight="100.0" style="{{0x7f1506e8}}" />
-    <com.google.android.libraries.inputmethod.widgets.SoftKeyView android:id="@id/key_pos_space" android:visibility="gone" android:layout_weight="300.0" style="{{0x7f1506f1}}" />
-    <com.google.android.libraries.inputmethod.widgets.SoftKeyView android:id="@id/A06" android:visibility="gone" android:layout_weight="100.0" style="{{0x7f1506ef}}" />
-    <com.google.android.libraries.inputmethod.widgets.SoftKeyView android:id="@id/A08" android:visibility="gone" android:layout_weight="100.0" style="{{0x7f1506e8}}" />
-    <com.google.android.libraries.inputmethod.widgets.SoftKeyView android:id="@id/key_pos_ime_action" android:layout_weight="150.0" style="{{0x7f1506ec}}" />
-</com.google.android.libraries.inputmethod.widgets.ExpandedChildLinearLayout>
+    <com.google.android.libraries.inputmethod.widgets.SoftKeyView android:id="@id/key_pos_switch_to_next_language" android:visibility="gone" android:layout_weight="125.0" app:{{name:0x7f04038f}}="true" style="{{0x7f1506e6}}" />
+    <com.google.android.libraries.inputmethod.widgets.SoftKeyView android:id="@id/key_pos_switch_to_symbol" android:layout_weight="125.0" style="{{0x7f1506e6}}" />
+    <com.google.android.libraries.inputmethod.widgets.SoftKeyView android:id="@id/A02" android:visibility="gone" android:layout_weight="125.0" style="{{0x7f1506e8}}" />
+    <com.google.android.libraries.inputmethod.widgets.SoftKeyView android:id="@id/key_pos_space" android:visibility="gone" android:layout_weight="500.0" style="{{0x7f1506f1}}" />
+    <com.google.android.libraries.inputmethod.widgets.SoftKeyView android:id="@id/A06" android:visibility="gone" android:layout_weight="125.0" style="{{0x7f1506ef}}" />
+    <com.google.android.libraries.inputmethod.widgets.SoftKeyView android:id="@id/A08" android:visibility="gone" android:layout_weight="125.0" style="{{0x7f1506e8}}" />
+    <com.google.android.libraries.inputmethod.widgets.SoftKeyView android:id="@id/key_pos_ime_action" android:layout_weight="250.0" style="{{0x7f1506ec}}" />
+</LinearLayout>
