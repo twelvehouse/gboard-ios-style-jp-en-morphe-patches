@@ -11,6 +11,8 @@ morphe-signing.key
 /_proto_overlay/
 /_ref/
 /_tools/
+# Design notes and instructions for local work
+/docs/
 
 ### Java template
 # Compiled class file

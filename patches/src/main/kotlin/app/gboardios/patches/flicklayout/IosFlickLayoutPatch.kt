@@ -3,6 +3,7 @@ package app.gboardios.patches.flicklayout
 import app.gboardios.patches.shared.Constants.COMPATIBILITY_GBOARD
 import app.gboardios.patches.shared.ResourceIds
 import app.gboardios.patches.shared.writeBundled
+import app.gboardios.patches.defcache.keyboardDefCacheRefreshPatch
 import app.gboardios.patches.signature.signatureCheckBypassPatch
 import app.morphe.patcher.patch.patch
 import app.morphe.patcher.patch.resourceXml
@@ -59,7 +60,7 @@ val iosFlickLayoutPatch = patch(
 ) {
     compatibleWith(COMPATIBILITY_GBOARD)
 
-    dependsOn(signatureCheckBypassPatch)
+    dependsOn(signatureCheckBypassPatch, keyboardDefCacheRefreshPatch)
 
     execute {
         val ids = ResourceIds.read()
