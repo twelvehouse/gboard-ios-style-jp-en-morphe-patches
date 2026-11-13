@@ -4,8 +4,8 @@ import app.gboardios.patches.shared.Constants.COMPATIBILITY_GBOARD
 import app.gboardios.patches.shared.ResourceIds
 import app.gboardios.patches.shared.writeBundled
 import app.gboardios.patches.signature.signatureCheckBypassPatch
-import app.morphe.patcher.patch.ResourcePatchContext
-import app.morphe.patcher.patch.resourcePatch
+import app.morphe.patcher.patch.patch
+import app.morphe.patcher.patch.resourceXml
 
 /*
  * How Gboard builds the Japanese 12-key keyboards (Gboard 18.5.4):
@@ -36,6 +36,7 @@ private const val XML_LAST_BODY_INCLUDE = 0x7f170c01L
 /** Key mappings that put the globe key into the 小゛゜ slot when several languages are enabled. */
 private val XML_LANGUAGE_SWITCH_MAPPINGS = listOf(0x7f170a57L, 0x7f170a5eL)
 
+private const val BUNDLED_DIR = "flicklayout"
 private const val SOFTKEYS_XML = "ios_flick_softkeys"
 private const val KEY_MAPPING_XML = "ios_flick_key_mapping"
 
@@ -50,7 +51,7 @@ private val NEW_IDS = listOf(
 )
 
 @Suppress("unused")
-val iosFlickLayoutPatch = resourcePatch(
+val iosFlickLayoutPatch = patch(
     name = "iOS flick layout",
     description = "Changes the Japanese 12-key keyboard to the layout of iOS with \"flick only\" enabled: " +
         "☆123, ABC and あいう keys and the globe key on the left, and backspace, space and " +
@@ -61,13 +62,13 @@ val iosFlickLayoutPatch = resourcePatch(
     dependsOn(signatureCheckBypassPatch)
 
     execute {
-        val ids = ResourceIds.read(this)
+        val ids = ResourceIds.read()
 
         addIds()
-        writeBundled(ids, "left_column.xml", ids.path(LAYOUT_LEFT_COLUMN))
-        writeBundled(ids, "right_column.xml", ids.path(LAYOUT_RIGHT_COLUMN))
-        writeBundled(ids, "$SOFTKEYS_XML.xml", "res/xml/$SOFTKEYS_XML.xml")
-        writeBundled(ids, "$KEY_MAPPING_XML.xml", "res/xml/$KEY_MAPPING_XML.xml")
+        writeBundled(ids, BUNDLED_DIR, "left_column.xml", ids.path(LAYOUT_LEFT_COLUMN))
+        writeBundled(ids, BUNDLED_DIR, "right_column.xml", ids.path(LAYOUT_RIGHT_COLUMN))
+        writeBundled(ids, BUNDLED_DIR, "$SOFTKEYS_XML.xml", "res/xml/$SOFTKEYS_XML.xml")
+        writeBundled(ids, BUNDLED_DIR, "$KEY_MAPPING_XML.xml", "res/xml/$KEY_MAPPING_XML.xml")
 
         val lastInclude = ids.ref(XML_LAST_BODY_INCLUDE)
         KEYBOARD_DEFINITIONS.forEach { definition ->
@@ -98,7 +99,7 @@ val iosFlickLayoutPatch = resourcePatch(
     }
 }
 
-private fun ResourcePatchContext.addIds() {
+private fun addIds() {
     resourceXml("res/values/ids.xml", copy = false).use { xml ->
         NEW_IDS.forEach { name ->
             xml.root.appendChild("item") {
@@ -108,6 +109,3 @@ private fun ResourcePatchContext.addIds() {
         }
     }
 }
-
-private fun ResourcePatchContext.writeBundled(ids: ResourceIds, bundled: String, target: String) =
-    writeBundled(ids, "flicklayout", bundled, target)

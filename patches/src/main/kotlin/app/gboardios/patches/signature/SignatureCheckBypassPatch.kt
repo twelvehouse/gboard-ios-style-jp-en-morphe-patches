@@ -4,7 +4,7 @@ import app.gboardios.patches.shared.Constants.COMPATIBILITY_GBOARD
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.methodCall
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import com.android.tools.smali.dexlib2.AccessFlags
 
 /**
@@ -23,7 +23,7 @@ internal object SignatureCheckFingerprint : Fingerprint(
 )
 
 /** Lets the re-signed APK pass Gboard's own signature check. Required by every other patch. */
-internal val signatureCheckBypassPatch = bytecodePatch(
+internal val signatureCheckBypassPatch = patch(
     description = "Lets the re-signed Gboard pass its own signature check.",
 ) {
     compatibleWith(COMPATIBILITY_GBOARD)

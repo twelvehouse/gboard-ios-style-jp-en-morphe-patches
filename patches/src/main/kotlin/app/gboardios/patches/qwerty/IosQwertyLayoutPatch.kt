@@ -4,7 +4,8 @@ import app.gboardios.patches.shared.Constants.COMPATIBILITY_GBOARD
 import app.gboardios.patches.shared.ResourceIds
 import app.gboardios.patches.shared.writeBundled
 import app.gboardios.patches.signature.signatureCheckBypassPatch
-import app.morphe.patcher.patch.resourcePatch
+import app.morphe.patcher.patch.patch
+import app.morphe.patcher.patch.resourceXml
 
 /*
  * Letter keyboards: their bottom row is layout 0x7f0e04ef, shared by the QWERTY-like layouts of
@@ -39,7 +40,7 @@ private const val SYMBOL_BODY_LAYOUT = "ios_symbols_body"
 private const val SYMBOL_KEY_MAPPING_XML = "ios_symbols_key_mapping"
 
 @Suppress("unused")
-val iosQwertyLayoutPatch = resourcePatch(
+val iosQwertyLayoutPatch = patch(
     name = "iOS QWERTY layout",
     description = "Puts the globe key of the letter keyboards at the bottom left, where it is on the " +
         "Japanese 12-key keyboards, and lays out the English symbol keyboard like the iOS \"123\" and " +
@@ -50,7 +51,7 @@ val iosQwertyLayoutPatch = resourcePatch(
     dependsOn(signatureCheckBypassPatch)
 
     execute {
-        val ids = ResourceIds.read(this)
+        val ids = ResourceIds.read()
 
         writeBundled(ids, "qwerty", "letters_bottom_row.xml", ids.path(LAYOUT_LETTERS_BOTTOM_ROW))
         writeBundled(ids, "qwerty", "$SYMBOL_BODY_LAYOUT.xml", "res/layout/$SYMBOL_BODY_LAYOUT.xml")

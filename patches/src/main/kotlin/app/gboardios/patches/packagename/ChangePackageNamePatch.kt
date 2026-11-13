@@ -2,7 +2,8 @@ package app.gboardios.patches.packagename
 
 import app.gboardios.patches.shared.Constants.COMPATIBILITY_GBOARD
 import app.gboardios.patches.shared.Constants.GBOARD_PACKAGE_NAME
-import app.morphe.patcher.patch.resourcePatch
+import app.morphe.patcher.patch.document
+import app.morphe.patcher.patch.patch
 import app.morphe.patcher.patch.stringOption
 import org.w3c.dom.Element
 
@@ -18,7 +19,7 @@ private val OWN_PERMISSION_SUFFIXES = listOf(
 )
 
 @Suppress("unused")
-val changePackageNamePatch = resourcePatch(
+val changePackageNamePatch = patch(
     name = "Change package name",
     description = "Installs the patched Gboard as a separate app next to the stock Gboard, " +
         "which is usually a system app that cannot be replaced by an APK with another signature.",

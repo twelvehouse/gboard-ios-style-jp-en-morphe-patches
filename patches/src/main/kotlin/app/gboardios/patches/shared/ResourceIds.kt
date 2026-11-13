@@ -1,6 +1,6 @@
 package app.gboardios.patches.shared
 
-import app.morphe.patcher.patch.ResourcePatchContext
+import app.morphe.patcher.patch.document
 import org.w3c.dom.Element
 
 /**
@@ -33,9 +33,10 @@ class ResourceIds private constructor(private val names: Map<Long, Pair<String, 
     companion object {
         private val PLACEHOLDER = Regex("""\{\{(name:)?(0x[0-9a-fA-F]{8})}}""")
 
-        fun read(context: ResourcePatchContext): ResourceIds {
+        /** Reads `public.xml` of the APK being patched. Call it from a patch's execute block. */
+        fun read(): ResourceIds {
             val names = HashMap<Long, Pair<String, String>>()
-            context.document("res/values/public.xml").use { document ->
+            document("res/values/public.xml").use { document ->
                 val publics = document.getElementsByTagName("public")
                 for (i in 0 until publics.length) {
                     val element = publics.item(i) as Element
