@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Left column of the Japanese 12-key keyboards, as on iOS with "flick only" enabled:
-     [☆123] [ABC] [あいう] [globe]. Replaces layout 0x7f0e0241. -->
+     [123] [ABC] [あいう] [globe]. Replaces layout 0x7f0e0241. -->
 <FrameLayout style="{{0x7f1503a1}}"
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
     <ImageView style="{{0x7f15039c}}" />

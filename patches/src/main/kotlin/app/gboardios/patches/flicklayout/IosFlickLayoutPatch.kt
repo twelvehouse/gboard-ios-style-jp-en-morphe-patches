@@ -54,7 +54,7 @@ private val NEW_IDS = listOf(
 val iosFlickLayoutPatch = patch(
     name = "iOS flick layout",
     description = "Changes the Japanese 12-key keyboard to the layout of iOS with \"flick only\" enabled: " +
-        "☆123, ABC and あいう keys and the globe key on the left, and backspace, space and " +
+        "123, ABC and あいう keys and the globe key on the left, and backspace, space and " +
         "a two-row enter key on the right.",
 ) {
     compatibleWith(COMPATIBILITY_GBOARD)
