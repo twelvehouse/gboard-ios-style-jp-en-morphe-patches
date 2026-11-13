@@ -2,12 +2,12 @@ group = "app.gboardios"
 
 patches {
     about {
-        name = "Gboard iOS Flick Patches"
-        description = "Morphe patches that give Gboard's Japanese 12-key keyboard the layout of iOS flick input"
-        source = "na"
-        author = "na"
-        contact = "na"
-        website = "na"
+        name = "Gboard iOS-style JP/EN Patches"
+        description = "iOS-style layouts for Gboard: the Japanese flick-only 12-key keyboard and the English QWERTY and symbol keyboards"
+        source = "git@github.com:twelvehouse/gboard-ios-style-jp-en-morphe-patches.git"
+        author = "twelvehouse"
+        contact = "https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/issues"
+        website = "https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches"
         license = "GPLv3"
     }
 }
