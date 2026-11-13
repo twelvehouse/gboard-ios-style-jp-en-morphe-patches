@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/compare/v1.0.0...v1.0.1) (2026-11-13)
+
+### 🐛 Bug Fixes
+
+* support only the arm64-v8a build of Gboard ([606389f](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/commit/606389fcd0740badb5939366164aff40bf0d5d7f))
+
 ## 1.0.0 (2026-11-13)
 
 ### ✨ New Features
