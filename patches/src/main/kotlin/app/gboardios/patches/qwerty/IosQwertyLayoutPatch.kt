@@ -9,8 +9,9 @@ import app.morphe.patcher.patch.resourceXml
 
 /*
  * Letter keyboards: their bottom row is layout 0x7f0e04ef, shared by the QWERTY-like layouts of
- * all languages. The patch replaces it so that the globe key sits at the left edge with 20% of
- * the width, exactly where the globe key of the Japanese 12-key keyboards is.
+ * all languages. The patch replaces it so that the globe key sits at the left edge, where the
+ * globe key of the Japanese 12-key keyboards is, and the row has iOS's proportions (globe, ?123,
+ * space and enter at 1 : 1 : 4 : 2, extra keys such as "/" and "." only narrowing the space key).
  *
  * Symbol keyboard (0x7f170878, shared by all languages): its body layout has fixed key positions
  * (D01-D10, C01-C10, B01-B07, A02, A03, A08, ...) and the softkeys are assigned to them by
