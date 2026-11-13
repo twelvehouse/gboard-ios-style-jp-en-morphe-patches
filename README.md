@@ -33,7 +33,24 @@ Gboard の設定で次のようにすると、スクリーンショットと同�
 ## パッチ一覧
 
 <!-- PATCHES_START EXPANDED -->
+> **[v1.0.0](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/releases/tag/v1.0.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;3 patches total
+<details open>
+<summary>📦 Gboard&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
+<br>
 
-<!-- このあいだは、リリースのときに patches-list.json から自動で作られます。手で書き換えないでください。 -->
+**Package name:** `com.google.android.inputmethod.latin`
+
+**🎯 Supported versions:**
+
+| 18.5.4.993608717-release-arm64-v8a | 18.5.4.993608717-release-x86_64 |
+| :---: | :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Change package name](#change-package-name) | Installs the patched Gboard as a separate app next to the stock Gboard, which is usually a system app that cannot be replaced by an APK with another signature. | • Package name |
+| [iOS QWERTY layout](#ios-qwerty-layout) | Puts the globe key of the letter keyboards at the bottom left, where it is on the Japanese 12-key keyboards, and lays out the English symbol keyboard like the iOS "123" and "#+=" pages. Gboard's number row setting keeps working. |  |
+| [iOS flick layout](#ios-flick-layout) | Changes the Japanese 12-key keyboard to the layout of iOS with "flick only" enabled: 123, ABC and あいう keys and the globe key on the left, and backspace, space and a two-row enter key on the right. |  |
+
+</details>
 
 <!-- PATCHES_END -->

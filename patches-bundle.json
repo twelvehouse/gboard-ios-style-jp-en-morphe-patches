@@ -1,7 +1,7 @@
 {
-  "created_at": "",
-  "description": "",
-  "download_url": "",
+  "created_at": "2026-11-13T12:25:53",
+  "description": "## 1.0.0 (2026-11-13)\n\n### ✨ New Features\n\n* iOS-style layouts for Gboard's Japanese and English keyboards ([b17d2de](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/commit/b17d2de600a6970fc879c538710bdf88099a3dba))\n\n### 🐛 Bug Fixes\n\n* label the number key 123 ([6e79ba9](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/commit/6e79ba90901d6c01fefcdaa5de817b96bc35c143))",
+  "download_url": "https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/releases/download/v1.0.0/patches-1.0.0.mpp",
   "signature_download_url": "",
-  "version": ""
+  "version": "1.0.0"
 }
