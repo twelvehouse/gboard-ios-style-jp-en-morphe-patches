@@ -27,11 +27,23 @@ object Constants {
         "18.5.4.993608717-release" to null,
     )
 
+    /**
+     * SHA-256 digests of Gboard's signing certificates (Google Inc.), so that Morphe Manager can
+     * check that an APK downloaded from any site is the original one. Gboard rotated its key: the
+     * APK is signed with the new key for Android 13 and later, and with the old one for older
+     * versions. From `apksigner verify --print-certs`; the same in every supported build.
+     */
+    private val GBOARD_SIGNATURES = setOf(
+        "7ce83c1b71f3d572fed04c8d40c5cb10ff75e6d87d9df6fbd53f0468c2905053", // Android 13 and later
+        "f0fd6c5b410f25cb25c3b53346c8972fae30f8ee7411df910480ad6b2d60db83", // Android 7 to 12
+    )
+
     val COMPATIBILITY_GBOARD = Compatibility(
         name = "Gboard",
         packageName = GBOARD_PACKAGE_NAME,
         apkFileType = ApkFileType.APK,
         appIconColor = 0x1A73E8,
+        signatures = GBOARD_SIGNATURES,
         targets = GBOARD_VERSIONS.keys.map { AppTarget(version = "$it-arm64-v8a") },
     )
 }
