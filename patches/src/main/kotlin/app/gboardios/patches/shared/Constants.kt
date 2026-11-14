@@ -15,12 +15,15 @@ object Constants {
      * name carries the ABI suffix.
      *
      * Each version maps to its resource id table under `/gboardios/ids/`, see [ResourceIds]. The
-     * ids in the patches are those of 18.5.4, so the builds with the same resources.arsc, such as
-     * the other 18.5.x builds of 993608717, need no table (null).
+     * ids in the patches are those of 18.5.4, so the builds where the resources the patches use
+     * keep their ids, such as the other 18.5.x builds, need no table (null).
      */
     val GBOARD_VERSIONS: Map<String, String?> = linkedMapOf(
         "18.6.3.1002251336-release" to "18.6.3.1002251336-release",
+        "18.5.11.993608717-release" to null,
+        "18.5.10.993608717-release" to null,
         "18.5.9.993608717-release" to null,
+        "18.5.6.993608717-release" to null,
         "18.5.4.993608717-release" to null,
     )
 
