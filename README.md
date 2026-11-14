@@ -32,7 +32,7 @@ Gboard の設定で次のようにすると、スクリーンショットと同�
 ## パッチ一覧
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.1.0](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/releases/tag/v1.1.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;3 patches total
+> **[v1.1.1-dev.2](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/releases/tag/v1.1.1-dev.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;3 patches total
 <details open>
 <summary>📦 Gboard&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
 <br>
@@ -41,8 +41,8 @@ Gboard の設定で次のようにすると、スクリーンショットと同�
 
 **🎯 Supported versions:**
 
-| 18.5.4.993608717-release-arm64-v8a |
-| :---: |
+| 18.6.3.1002251336-release-arm64-v8a | 18.5.11.993608717-release-arm64-v8a | 18.5.10.993608717-release-arm64-v8a | 18.5.9.993608717-release-arm64-v8a | 18.5.6.993608717-release-arm64-v8a | 18.5.4.993608717-release-arm64-v8a |
+| :---: | :---: | :---: | :---: | :---: | :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
