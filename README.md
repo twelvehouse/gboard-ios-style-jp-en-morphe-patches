@@ -32,7 +32,7 @@ Gboard の設定で次のようにすると、スクリーンショットと同�
 ## パッチ一覧
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.1.1-dev.2](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/releases/tag/v1.1.1-dev.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;3 patches total
+> **[v1.1.1](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/releases/tag/v1.1.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;3 patches total
 <details open>
 <summary>📦 Gboard&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
 <br>
