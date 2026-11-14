@@ -4,6 +4,12 @@
 
 * support Gboard 18.6.3.1002251336 and 18.5.9.993608717 ([2815540](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/commit/2815540e5cbff7c5993ec03442905d77de528630))
 
+## [1.1.1-dev.1](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/compare/v1.1.0...v1.1.1-dev.1) (2026-11-14)
+
+### 🚀 Updated App Support
+
+* support Gboard 18.6.3.1002251336 and 18.5.9.993608717 ([2815540](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/commit/2815540e5cbff7c5993ec03442905d77de528630))
+
 ## [1.1.0](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/compare/v1.0.2...v1.1.0) (2026-11-14)
 
 ### ✨ New Features
