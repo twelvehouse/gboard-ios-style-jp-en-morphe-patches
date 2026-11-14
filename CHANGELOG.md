@@ -1,3 +1,9 @@
+## [1.2.0-dev.1](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/compare/v1.1.1...v1.2.0-dev.1) (2026-11-14)
+
+### ✨ New Features
+
+* let Morphe Manager check that the Gboard APK is the original one ([180b110](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/commit/180b11014cc0ad9e996831fe531e05338f2dd9a4))
+
 ## [1.1.1](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/compare/v1.1.0...v1.1.1) (2026-11-14)
 
 ### 🚀 Updated App Support
