@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "patches": [
     {
       "name": "Change package name",
@@ -91,7 +91,17 @@
           ]
         }
       ],
-      "options": []
+      "options": [
+        {
+          "key": "markActiveModeKey",
+          "title": "Mark the active mode key",
+          "description": "Makes the 123, ABC or あいう key of the keyboard that is shown pill-shaped, like the globe key. Turn it off to keep all three keys rectangular.",
+          "required": false,
+          "type": "kotlin.Boolean",
+          "default": true,
+          "values": null
+        }
+      ]
     }
   ]
 }

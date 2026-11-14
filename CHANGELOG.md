@@ -1,3 +1,13 @@
+## [1.1.0](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/compare/v1.0.2...v1.1.0) (2026-11-14)
+
+### ✨ New Features
+
+* mark the active mode key of the Japanese 12-key keyboards ([8ca9a46](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/commit/8ca9a46f52be205e77978234e26f73c95fcaacdd))
+
+### 🐛 Bug Fixes
+
+* show keyboard layout changes after an update without clearing data ([6fc6db4](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/commit/6fc6db47a0bbe7a20f6096a598e39031b1d8ddf0))
+
 ## [1.0.2](https://github.com/twelvehouse/gboard-ios-style-jp-en-morphe-patches/compare/v1.0.1...v1.0.2) (2026-11-13)
 
 ### 🐛 Bug Fixes
